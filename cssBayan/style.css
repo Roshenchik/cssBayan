@@ -84,6 +84,8 @@ input {
 	}
 }
 .fa-caret-down {
+	content: '\f150';
+	font: var(--fa-font-regular);
 	width: 1em;
 	height: 1em;
 	text-align: center;
@@ -145,8 +147,9 @@ input:checked ~ .label {
 }
 
 
-input:checked ~ .fa-caret-down {
+input:checked ~ p .fa-solid {
 	transform: rotate(180deg);
+	opacity: 1;
 }
 
 
