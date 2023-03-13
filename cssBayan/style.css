@@ -5,8 +5,8 @@
 }
 
 * {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	border: none;
 }
 
@@ -129,7 +129,7 @@ input {
 		transform: rotate(180deg);
 	}
 	.tab:hover .content {
-		padding: 15px 0;
+		padding: 1.2em 0;
 		max-height: 100vh;
 		visibility: visible;
 	}
@@ -154,7 +154,7 @@ input:checked ~ p .fa-solid {
 
 
 input:checked ~ .content {
-	padding: 15px 0;
+	padding: 1.2em 0;
 	max-height: 100vh;
 	visibility: visible;
 }
