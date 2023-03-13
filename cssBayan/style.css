@@ -5,7 +5,164 @@
 }
 
 * {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	border: none;
 }
+
+body {
+	background-color: rgb(70, 70, 70);
+}
+
+input {
+	display: none;
+	padding: 0;
+	margin: 0;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+}
+
+.accordion {
+	margin: 0 auto;
+	margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.title {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: rgb(128, 199, 114);
+}
+
+.tabs {
+	margin: 1.2em;
+	background-color: rgb(255, 255, 255);
+	border-radius: 1em;
+	overflow: hidden;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+
+.tab {
+	width: 100%;
+	width: min(615px, 60vw);
+	overflow: hidden;
+	cursor: pointer;
+}
+@media (max-width: 768px) {
+	.tab {
+		width: max(70vw, 400px);
+	}
+}
+@media (max-width: 425px) {
+	.tab {
+		width: calc(100vw - 50px);
+	}
+}
+
+.label {
+	display: flex;
+	background-color: rgb(27, 117, 87);
+	cursor: pointer;
+	padding: 0.7em;
+	font-size: 22px;
+	justify-content: space-between;
+	color: white;
+	font-weight: bold;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+	transition: 0.4s;
+}
+@media (max-width: 768px) {
+	.label {
+		font-size: 18px;
+	}
+}
+@media (max-width: 425px) {
+	.label {
+		font-size: 15px;
+	}
+}
+.fa-caret-down {
+	content: '\f150';
+	font: var(--fa-font-regular);
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	opacity: 0.3;
+	transition: 0.3s;
+}
+
+.image {
+	aspect-ratio: 1;
+	width: 50%;
+	transition: 0.4s;
+	cursor: pointer;
+}
+
+
+.content {
+	padding: 0;
+  display: flex;
+  justify-content: center;
+	
+	max-height: 0;
+	overflow: hidden;
+	visibility: hidden;
+
+	transition: 1s;
+}
+
+@media (hover: hover) {
+  /* when hover is supported */
+	.tabs {
+		cursor: pointer;
+	}
+	.tabs:hover .fa-caret-down{
+		opacity: 1;
+	}
+
+	.tab:hover .label {
+		background-color: rgb(14, 90, 64);
+	}
+	.tab:hover .fa-caret-down {
+		transform: rotate(180deg);
+	}
+	.tab:hover .content {
+		padding: 1.2em 0;
+		max-height: 100vh;
+		visibility: visible;
+	}
+
+	.image:hover {
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+	}
+	.label:hover {
+		background-color: rgb(14, 90, 64);
+	}
+}
+
+input:checked ~ .label {
+	background-color: rgb(14, 90, 64);
+}
+
+
+input:checked ~ p .fa-solid {
+	transform: rotate(180deg);
+	opacity: 1;
+}
+
+
+input:checked ~ .content {
+	padding: 1.2em 0;
+	max-height: 100vh;
+	visibility: visible;
+}
+
+
+
