@@ -69,6 +69,14 @@ input {
 
 	transition: 0.4s;
 }
+.label::after {
+	content: '\f150';
+	font: var(--fa-font-regular);
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	transition: 0.3s;
+}
 .label:hover {
 	background-color: rgb(14, 90, 64);
 }
@@ -92,6 +100,10 @@ input {
 
 input:checked ~ .label {
 	background-color: rgb(14, 90, 64);
+}
+
+input:checked ~ .label::after {
+	transform: rotate(180deg);
 }
 
 input:checked ~ .content {
