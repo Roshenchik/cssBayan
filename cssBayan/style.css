@@ -15,7 +15,12 @@ body {
 }
 
 input {
-  position: absolute;
+	display: none;
+	padding: 0;
+	margin: 0;
+	width: 0;
+	height: 0;
+	visibility: hidden;
   opacity: 0;
   z-index: -1;
 }
