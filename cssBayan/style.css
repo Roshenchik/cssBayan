@@ -83,9 +83,7 @@ input {
 		font-size: 15px;
 	}
 }
-.label::after {
-	content: '\f150';
-	font: var(--fa-font-regular);
+.fa-caret-down {
 	width: 1em;
 	height: 1em;
 	text-align: center;
@@ -118,14 +116,14 @@ input {
 	.tabs {
 		cursor: pointer;
 	}
-	.tabs:hover .label::after{
+	.tabs:hover .fa-caret-down{
 		opacity: 1;
 	}
 
 	.tab:hover .label {
 		background-color: rgb(14, 90, 64);
 	}
-	.tab:hover .label::after {
+	.tab:hover .fa-caret-down {
 		transform: rotate(180deg);
 	}
 	.tab:hover .content {
@@ -147,7 +145,7 @@ input:checked ~ .label {
 }
 
 
-input:checked ~ .label::after {
+input:checked ~ .fa-caret-down {
 	transform: rotate(180deg);
 }
 
