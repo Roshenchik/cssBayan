@@ -18,10 +18,16 @@ input {
 
 .accordion {
 	margin: 0 auto;
+	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+}
+
+.title {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: rgb(64, 146, 47);
 }
 
 .tabs {
@@ -30,12 +36,24 @@ input {
 	border-radius: 20px;
 	overflow: hidden;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
 }
 
 .tab {
 	width: 100%;
-	width: 350px;
+	width: 700px;
 	overflow: hidden;
+
+}
+@media (max-width: 768px) {
+	.tab {
+		width: 420px;
+	}
+}
+@media (max-width: 425px) {
+	.tab {
+		width: calc(100vw - 50px);
+	}
 }
 
 .label {
@@ -48,9 +66,11 @@ input {
 	color: white;
 	font-weight: bold;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.label:last-child{
 
+	transition: 0.4s;
+}
+.label:hover {
+	background-color: rgb(14, 90, 64);
 }
 
 .image {
@@ -59,13 +79,23 @@ input {
 }
 
 .content {
+	padding: 0;
+  display: flex;
+  justify-content: center;
+	
 	max-height: 0;
 	overflow: hidden;
 	visibility: hidden;
+
 	transition: 1s;
 }
 
+input:checked ~ .label {
+	background-color: rgb(14, 90, 64);
+}
+
 input:checked ~ .content {
+	padding: 15px 0;
 	max-height: 100vh;
 	visibility: visible;
 }
